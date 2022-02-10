@@ -1,11 +1,13 @@
-// import { useEffect } from "react";
-
-// import { firebaseInit } from "../utils/firebaseInit";
+import { useEffect } from "react";
 
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  useEffect(() => {
+    localStorage.removeItem("romanticId");
+  }, []);
+
   return (
     <div
       className={styles.container}
@@ -14,18 +16,13 @@ export default function Home() {
       <h1>Hello Gois</h1>
       <ul>
         <li>
-          <Link href="/register">
-            <a>Get spicy</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/pickup">
+          <Link href="/submit-pickup">
             <a>Pickup someone</a>
           </Link>
         </li>
         <li>
-          <Link href="/flatter">
-            <a>Get your man</a>
+          <Link href="/read-pickup">
+            <a>Fall for someone</a>
           </Link>
         </li>
       </ul>

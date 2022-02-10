@@ -2,7 +2,13 @@ const base64 = require("base-64");
 const utf8 = require("utf8");
 
 export function encodeUUID(payload) {
-  const uuid = `${payload.sex}:${payload.name}:${payload.branch}:${payload.sem}:${payload.preferance}:${payload.phone}:${payload.email}`;
+  const uuid = `${payload.sex}:${payload.name}:${payload.branch}:${
+    payload.sem
+  }:${payload.preferance}:${payload.phone}:${payload.email}${
+    payload.pickupLine ? ":" + payload.pickupLine : ""
+  }`;
+
+  console.log(uuid);
 
   const encodedString = base64.encode(utf8.encode(uuid));
 

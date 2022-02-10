@@ -16,31 +16,37 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getDatabase();
 
-export function writeNewUser(tcrid, uuid, sex) {
-  const db = getDatabase();
-
+export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
   const key = getKey(tcrid);
 
   if (key === "invalid") {
     console.log("Play fair buddy");
   } else {
-    push(child(ref(db), sex)).key;
+    const id = push(child(ref(db), "registered")).key;
 
     const updates = {};
-    updates[sex + "/" + key] = uuid;
+    updates[sex + "/" + key + "/" + "id"] = uuid;
+    if (pickupLine !== "") {
+      updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
+      updates["registered/" + id] = key;
+    }
 
     return update(ref(db), updates);
   }
 }
 
-export function readUsersOnSex() {
+export function readPickupLines() {
   const dbRef = ref(getDatabase());
+  const sex = "male";
 
-  get(child(dbRef, `m`))
+  get(child(dbRef, `${sex}/`))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        return snapshot.val();
+        // Remove Comment
+        console.log(snapshot.val().pickup);
+        return snapshot.val().pickup;
       } else {
         console.log("No data available");
       }
