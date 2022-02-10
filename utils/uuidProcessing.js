@@ -15,14 +15,12 @@ export function decodeUUID(encodedString) {
 
   const payload = uuid.split(":");
 
-  console.log(payload);
-
   return payload;
 }
 
 export function getKey(tcrid) {
   const id = tcrid.split("@");
 
-  if (id[1] === "@gectcr.ac.in") return 0;
-  else return id[0];
+  if (id[1] === "gectcr.ac.in") return id[0];
+  else return "invalid";
 }

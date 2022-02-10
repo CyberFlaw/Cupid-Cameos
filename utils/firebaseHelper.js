@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, child, get } from "firebase/database";
+import { getDatabase, ref, child, get, push, update } from "firebase/database";
 
 import { getKey } from "./uuidProcessing";
 
@@ -17,30 +17,30 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export function writeUserData(tcrid, uuid, sex) {
-  const key = getKey(tcrid);
-  if (key === 0) {
-    console.log("Play fair buddy");
-  }
-
+export function writeNewUser(tcrid, uuid, sex) {
   const db = getDatabase();
-  set(ref(db, "users/" + sex), {
-    key: uuid,
-  })
-    .then(() => {
-      console.log("Success");
-    })
-    .catch((error) => {
-      console.log("Failed");
-    });
+
+  const key = getKey(tcrid);
+
+  if (key === "invalid") {
+    console.log("Play fair buddy");
+  } else {
+    push(child(ref(db), sex)).key;
+
+    const updates = {};
+    updates[sex + "/" + key] = uuid;
+
+    return update(ref(db), updates);
+  }
 }
 
-export function readUserData(sex) {
+export function readUsersOnSex() {
   const dbRef = ref(getDatabase());
-  get(child(dbRef, `users/${sex}`))
+
+  get(child(dbRef, `m`))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
+        return snapshot.val();
       } else {
         console.log("No data available");
       }

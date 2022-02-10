@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { encodeUUID, decodeUUID } from "../utils/uuidProcessing";
-import { writeUserData } from "../utils/firebaseHelper";
+import { encodeUUID, decodeUUID, getKey } from "../utils/uuidProcessing";
+import { writeNewUser } from "../utils/firebaseHelper";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -92,17 +92,20 @@ export default function Register() {
         <button
           onClick={() => {
             payload.name = name;
-            payload.email = email;
+
             payload.branch = branch;
             payload.sem = sem;
+            payload.email = email;
             payload.sex = sex;
             payload.preferance = preferance;
             payload.phone = phone;
             payload.uuid = encodeUUID(payload);
 
-            decodeUUID(payload.uuid);
+            const check = getKey(email);
+            if (check === 0) console.log("Wrong email");
+            else writeNewUser(payload.email, payload.uuid, payload.sex);
 
-            writeUserData(payload.email, payload.uuid, payload.sex);
+            decodeUUID(payload.uuid);
           }}
         >
           Register
