@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import { encodeUUID, decodeUUID } from "./utils/uuidProcessing";
+import { encodeUUID, decodeUUID } from "../utils/uuidProcessing";
+import { writeUserData } from "../utils/firebaseHelper";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -100,6 +101,8 @@ export default function Register() {
             payload.uuid = encodeUUID(payload);
 
             decodeUUID(payload.uuid);
+
+            writeUserData(payload.email, payload.uuid, payload.sex);
           }}
         >
           Register
