@@ -65,6 +65,7 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
 }
 
 export function readPickupLines() {
+  let lines = [];
   const dbRef = ref(getDatabase());
   const sex = "male";
 
@@ -72,10 +73,18 @@ export function readPickupLines() {
     .then((snapshot) => {
       if (snapshot.exists()) {
         // Remove Comment
-        console.log(snapshot.val().pickup);
-        return snapshot.val().pickup;
+        Object.values(snapshot.val()).forEach((element) => {
+          lines.push(element);
+        });
+
+        // for (const [key, value] of Object.entries(snapshot.val())) {
+        //   lines.push([key,value]);
+        // }
+        console.log(lines);
+        return lines;
       } else {
         console.log("No data available");
+        return -1;
       }
     })
     .catch((error) => {

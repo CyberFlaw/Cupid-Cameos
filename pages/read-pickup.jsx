@@ -13,9 +13,10 @@ export default function Flatter() {
 
   const payload = {};
 
-  useEffect(() => {
+  useEffect((pickupLine) => {
     const lines = readPickupLines();
-    console.log(lines);
+    if (lines != -1) setPickupLine(lines);
+    console.log(pickupLine);
   }, []);
 
   return (
