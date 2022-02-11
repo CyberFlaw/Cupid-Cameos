@@ -15,7 +15,7 @@ const firebaseConfig = {
   measurementId: "G-VFH503YKKJ",
 };
 
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 const db = getDatabase();
 
 export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
@@ -24,16 +24,43 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
   if (key === "invalid") {
     console.log("Play fair buddy");
   } else {
-    const id = push(child(ref(db), "registered")).key;
+    const refdb = ref(db);
+    get(child(refdb, `registered/`))
+      .then((snapshot) => {
+        if (snapshot.val() !== null) {
+          console.log(snapshot.val());
+          if (Object.keys(snapshot.val()).find((element) => element === key)) {
+            // Remove Comment
+            console.log("User Already Exits!");
+            return 0;
+          } else {
+            push(child(ref(db), "registered")).key;
 
-    const updates = {};
-    updates[sex + "/" + key + "/" + "id"] = uuid;
-    if (pickupLine !== "") {
-      updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
-      updates["registered/" + id] = key;
-    }
+            const updates = {};
+            updates[sex + "/" + key + "/" + "id"] = uuid;
+            if (pickupLine !== "") {
+              updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
+              updates["registered/" + key] = "active";
+            }
+            console.log("Inserted Data!");
+            return update(ref(db), updates);
+          }
+        } else {
+          push(child(ref(db), "registered")).key;
 
-    return update(ref(db), updates);
+          const updates = {};
+          updates[sex + "/" + key + "/" + "id"] = uuid;
+          if (pickupLine !== "") {
+            updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
+            updates["registered/" + key] = "active";
+          }
+          console.log("Inserted Data!");
+          return update(ref(db), updates);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 }
 
