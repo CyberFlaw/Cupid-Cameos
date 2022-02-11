@@ -31,15 +31,15 @@ export default function Register() {
 
   return (
     <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-screen sm:h-screen justify-start items-center">
-      <h1 className="text-6xl sm:text-7xl sm:mt-24 mt-16 text-white mb-10">
+      <h1 className="text-6xl sm:text-7xl sm:mt-20 mt-16 text-white mb-10">
         Valient Hearts
       </h1>
 
       <div className="flex flex-col justify-around items-center">
-        <div className="flex sm:flex-row flex-col items-center sm:mb-8">
+        <div className="flex sm:flex-row flex-col items-center sm:mb-5">
           <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
             <label htmlFor="name" className="text-white ml-3">
-              Name
+              Name:
             </label>
             <input
               id="name"
@@ -53,7 +53,7 @@ export default function Register() {
           </div>
           <div className="flex flex-col sm:mb-0 mb-5">
             <label htmlFor="email" className="text-white ml-3">
-              Email (GECTCR)
+              Email (GECTCR ID):
             </label>
             <input
               id="email"
@@ -67,10 +67,10 @@ export default function Register() {
           </div>
         </div>
 
-        <div className="flex sm:flex-row flex-col items-center sm:mb-8">
+        <div className="flex sm:flex-row flex-col items-center sm:mb-5">
           <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
             <label htmlFor="phone" className="text-white ml-3">
-              Phone
+              Phone:
             </label>
             <input
               id="phone"
@@ -86,7 +86,7 @@ export default function Register() {
           <div className="flex flex-row justify-around ">
             <div className="flex flex-col sm:mb-0 mb-5 sm:mr-10 mr-4">
               <label htmlFor="branch" className="text-white ml-2">
-                Branch
+                Branch:
               </label>
               <input
                 id="branch"
@@ -101,7 +101,7 @@ export default function Register() {
 
             <div className="flex flex-col sm:mb-0 mb-5">
               <label htmlFor="sem" className="text-white ml-1 ">
-                Semester
+                Semester:
               </label>
               <input
                 id="sem"
@@ -116,9 +116,9 @@ export default function Register() {
           </div>
         </div>
 
-        <div className="flex flex-col mb-16 sm:mb-24 sm:mt-0 mt-5">
+        <div className="flex flex-col mb-16 sm:mb-18 sm:mt-0 mt-5">
           <label className="text-white ml-1">
-            Enetr Pickup line (Max 180 )
+            Enter Pickup line (Max 180):
           </label>
           <textarea
             name="pickupline"
