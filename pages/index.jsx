@@ -19,7 +19,7 @@ export default function Home() {
         <div className="w-full flex sm:flex-row flex-col justify-center items-center mt-0 sm:mt-3 sm:mb-20">
           {/* Submit pickup */}
           <div id="submit-pickup">
-            <Link href="/read-pickup" passHref>
+            <Link href="/submit-pickup" passHref>
               <button className=" px-8 py-2 mt-8 rounded-3xl text-gray-100 font-semibold uppercase tracking-wide">
                 <div className="bg-black hover:opacity-60 opacity-0 h-full">
                   {" "}
