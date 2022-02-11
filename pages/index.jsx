@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,14 +5,10 @@ import readImage from "../assets/read.png";
 import writeImage from "../assets/write.png";
 
 export default function Home() {
-  useEffect(() => {
-    localStorage.removeItem("romanticId");
-  }, []);
-
   return (
     <>
       <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-auto sm:h-screen justify-start items-center">
-        <h1 className="text-7xl sm:mt-24 mt-16 text-white">Valentine</h1>
+        <h1 className="text-7xl sm:mt-20 mt-16 text-white">Valentine</h1>
 
         <div className="w-full flex sm:flex-row flex-col justify-center items-center mt-0 sm:mt-3 sm:mb-20">
           {/* Submit pickup */}

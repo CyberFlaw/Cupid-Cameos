@@ -9,10 +9,12 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [branch, setBranch] = useState("");
   const [sem, setSem] = useState("");
-  const [sex, setSex] = useState("");
-  const [preferance, setPreferance] = useState("");
+  // const [sex, setSex] = useState("");
+  // const [preferance, setPreferance] = useState("");
   const [phone, setPhone] = useState("");
   const [pickupLine, setPickupLine] = useState("");
+
+  const router = useRouter();
 
   const payload = {};
 
@@ -21,7 +23,6 @@ export default function Register() {
 
     if (id) {
       const payload = decodeUUID(id);
-      console.log(payload[0]);
 
       // if (payload[0] === "m") router.push("/submit-pickup");
       // else if (payload[0] === "f") router.push("/read-pickup");
@@ -29,88 +30,107 @@ export default function Register() {
   }, []);
 
   return (
-    <div>
-      <h1>Hello thirsty ones</h1>
+    <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-screen sm:h-screen justify-start items-center">
+      <h1 className="text-6xl sm:text-7xl sm:mt-24 mt-16 text-white mb-10">
+        Valient Hearts
+      </h1>
 
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          required
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
+      <div className="flex flex-col justify-around items-center">
+        <div className="flex sm:flex-row flex-col items-center sm:mb-8">
+          <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
+            <label htmlFor="name" className="text-white ml-3">
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              className="rounded-md p-0.5 px-3 text-gray-600 "
+              required
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            />
+          </div>
+          <div className="flex flex-col sm:mb-0 mb-5">
+            <label htmlFor="email" className="text-white ml-3">
+              Email (GECTCR)
+            </label>
+            <input
+              id="email"
+              type="text"
+              required
+              className="rounded-md p-0.5 px-3 text-gray-600"
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            />
+          </div>
+        </div>
 
-        <label htmlFor="email">Email (Tcr id)</label>
-        <input
-          id="email"
-          type="text"
-          required
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
+        <div className="flex sm:flex-row flex-col items-center sm:mb-8">
+          <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
+            <label htmlFor="phone" className="text-white ml-3">
+              Phone
+            </label>
+            <input
+              id="phone"
+              type="text"
+              required
+              className="rounded-md p-0.5 px-3 text-gray-600 sm:w-32"
+              onChange={(event) => {
+                setPhone(event.target.value);
+              }}
+            />
+          </div>
 
-        <label htmlFor="phone">Phone</label>
-        <input
-          id="phone"
-          type="text"
-          required
-          onChange={(event) => {
-            setPhone(event.target.value);
-          }}
-        />
+          <div className="flex flex-row justify-around ">
+            <div className="flex flex-col sm:mb-0 mb-5 sm:mr-10 mr-4">
+              <label htmlFor="branch" className="text-white ml-2">
+                Branch
+              </label>
+              <input
+                id="branch"
+                type="text"
+                required
+                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20  "
+                onChange={(event) => {
+                  setBranch(event.target.value);
+                }}
+              />
+            </div>
 
-        <label htmlFor="branch">Branch</label>
-        <input
-          id="branch"
-          type="text"
-          required
-          onChange={(event) => {
-            setBranch(event.target.value);
-          }}
-        />
+            <div className="flex flex-col sm:mb-0 mb-5">
+              <label htmlFor="sem" className="text-white ml-1 ">
+                Semester
+              </label>
+              <input
+                id="sem"
+                type="text"
+                required
+                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20"
+                onChange={(event) => {
+                  setSem(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+        </div>
 
-        <label htmlFor="sem">Semester</label>
-        <input
-          id="sem"
-          type="text"
-          required
-          onChange={(event) => {
-            setSem(event.target.value);
-          }}
-        />
-
-        <label htmlFor="sex">Sex</label>
-        <input
-          id="sex"
-          type="text"
-          required
-          onChange={(event) => {
-            setSex(event.target.value);
-          }}
-        />
-
-        <label htmlFor="preference">sexual orientation</label>
-        <input
-          id="preference"
-          type="text"
-          required
-          onChange={(event) => {
-            setPreferance(event.target.value);
-          }}
-        />
-
-        <label>Enetr Pickup line (Max 180)</label>
-        <input
-          type=""
-          maxLength={180}
-          onChange={(event) => {
-            setPickupLine(event.target.value);
-          }}
-        />
+        <div className="flex flex-col mb-16 sm:mb-24 sm:mt-0 mt-5">
+          <label className="text-white ml-1">
+            Enetr Pickup line (Max 180 )
+          </label>
+          <textarea
+            name="pickupline"
+            cols="30"
+            rows="10"
+            maxLength={180}
+            className="p-1 rounded-md h-36 w-64 sm:h-48 sm:w-80 text-gray-600"
+            onChange={(event) => {
+              setPickupLine(event.target.value);
+            }}
+          ></textarea>
+        </div>
 
         <button
           onClick={() => {
@@ -119,8 +139,8 @@ export default function Register() {
             payload.branch = branch;
             payload.sem = sem;
             payload.email = email;
-            payload.sex = sex;
-            payload.preferance = preferance;
+            payload.sex = "male";
+            // payload.preferance = preferance;
             payload.phone = phone;
             payload.uuid = encodeUUID(payload);
 
@@ -135,15 +155,13 @@ export default function Register() {
               );
 
               localStorage.setItem("romanticId", payload.uuid);
-
-              // if (sex === "m") router.push("/submit-pickup");
-              // else if (sex === "f") router.push("/read-pickup");
-              // else
-              // router.push('')
+              router.push("/waitingroom");
             }
           }}
         >
-          Register
+          <div className="px-10 py-2 rounded-lg bg-pink-400 ">
+            <h2 className="text-white">Submit Proposal</h2>
+          </div>
         </button>
       </div>
     </div>

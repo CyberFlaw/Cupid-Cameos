@@ -28,7 +28,6 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
     get(child(refdb, `registered/`))
       .then((snapshot) => {
         if (snapshot.val() !== null) {
-          console.log(snapshot.val());
           if (Object.keys(snapshot.val()).find((element) => element === key)) {
             // Remove Comment
             console.log("User Already Exits!");
