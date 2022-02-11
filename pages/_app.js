@@ -1,7 +1,10 @@
 import '../styles/globals.css'
+import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function App() {
+  return <Button variant="contained">Hello World</Button>;
 }
 
-export default MyApp
+ReactDOM.render(<App />, document.querySelector('#app'));

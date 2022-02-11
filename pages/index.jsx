@@ -13,7 +13,7 @@ export default function Home() {
       className={styles.container}
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <h1>Hello Gois</h1>
+      <h1><p class="text-blue-600">hello gois</p></h1>
       <ul>
         <li>
           <Link href="/submit-pickup">
