@@ -48,9 +48,9 @@ export default function Register() {
           </h3>
           <br />
           <h3>
-            I've heard that there will be a festival. A big one in fact. A lot
-            of beautiful young maidens will be attending this festival. And the
-            best part is those hearts yearning for a little love.
+            I&apos;ve heard that there will be a festival. A big one in fact. A
+            lot of beautiful young maidens will be attending this festival. And
+            the best part is those hearts yearning for a little love.
           </h3>
           <br />
           ✨💌 Well, can you squeeze all your feelings, tuck with up a wholesome
@@ -60,8 +60,9 @@ export default function Register() {
           <h3>
             <br />
             <h3>
-              Don't be shy, you will never know what will happen next, Because
-              love is shy, it's sly and finds you where you least expect it.
+              Don&apos;t be shy, you will never know what will happen next,
+              Because love is shy, it&apos;s sly and finds you where you least
+              expect it.
             </h3>
           </h3>
         </div>
