@@ -1,16 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import readImage from "../assets/read.png";
+// import readImage from "../assets/read.png";
 import writeImage from "../assets/write.png";
 
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-auto sm:h-screen justify-start items-center">
+      <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen sm:h-screen justify-start items-center">
         <h1 className="text-7xl sm:mt-20 mt-16 text-white">Valentine</h1>
 
-        <div className="w-full flex sm:flex-row flex-col justify-center items-center mt-0 sm:mt-3 sm:mb-20">
+        <div className="w-full flex sm:flex-row flex-col justify-center items-center mt-0 sm:mt-3 sm:mb-20 mb-36">
           {/* Submit pickup */}
           <div id="submit-pickup">
             <Link href="/submit-pickup" passHref>
@@ -71,7 +71,7 @@ export default function Home() {
             </Link>
           </div> */}
         </div>
-        <div className="flex flex-1 flex-col justify-center items-center ">
+        <div className="flex flex-grow flex-col justify-center items-center ">
           <h3 className="text-white text-xs">Brought to you by</h3>
           <h2 className="text-white text-xm">
             {" "}
