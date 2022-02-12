@@ -30,7 +30,7 @@ export default function Register() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-screen sm:h-screen justify-start items-center">
+    <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen h-auto sm:min-h-screen justify-start items-center">
       <h1 className="text-6xl sm:text-7xl sm:mt-16 mt-16 text-white mb-10 ">
         Valient Hearts
       </h1>

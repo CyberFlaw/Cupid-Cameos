@@ -41,7 +41,7 @@ export default function Home() {
             </Link>
           </div>
           {/* Read pickup */}
-          <div id="read-pickup" className="sm:mb-0 mb-10">
+          {/* <div id="read-pickup" className="sm:mb-0 mb-10">
             <Link href="/read-pickup" passHref>
               <button className=" px-8 py-2 mt-8 rounded-3xl text-gray-100 font-semibold uppercase tracking-wide">
                 <div className="bg-black hover:opacity-60 opacity-0 h-full">
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-1 flex-col justify-center items-center ">
           <h3 className="text-white text-xs">Brought to you by</h3>
