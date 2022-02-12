@@ -139,28 +139,31 @@ export default function Register() {
 
         <button
           onClick={() => {
-            payload.name = name;
+            if (name && email && branch && sem && phone && pickupLine) {
+              payload.name = name;
+              payload.branch = branch;
+              payload.sem = sem;
+              payload.email = email;
+              payload.sex = "male";
+              // payload.preferance = preferance;
+              payload.phone = phone;
+              payload.uuid = encodeUUID(payload);
 
-            payload.branch = branch;
-            payload.sem = sem;
-            payload.email = email;
-            payload.sex = "male";
-            // payload.preferance = preferance;
-            payload.phone = phone;
-            payload.uuid = encodeUUID(payload);
+              const check = getKey(email);
+              if (check === "invalid") console.log("Wrong email");
+              else {
+                writeNewUser(
+                  payload.email,
+                  payload.uuid,
+                  payload.sex,
+                  pickupLine
+                );
 
-            const check = getKey(email);
-            if (check === "invalid") console.log("Wrong email");
-            else {
-              writeNewUser(
-                payload.email,
-                payload.uuid,
-                payload.sex,
-                pickupLine
-              );
-
-              localStorage.setItem("romanticId", payload.uuid);
-              router.push("/waitingroom");
+                localStorage.setItem("romanticId", payload.uuid);
+                router.push("/waitingroom");
+              }
+            } else {
+              alert("Please fill all the fields");
             }
           }}
         >
