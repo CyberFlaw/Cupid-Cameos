@@ -14,7 +14,7 @@ export default function Home() {
     const id = localStorage.getItem("romanticId");
 
     if (id) {
-      // router.push("/waitingroom");
+      router.push("/waitingroom");
     }
   });
   return (
