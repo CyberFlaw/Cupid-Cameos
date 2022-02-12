@@ -36,11 +36,36 @@ export default function Register() {
       </h1>
 
       <div
-        className="flex flex-col justify-around items-center bg-white px-10 py-10 sm:py-5 rounded-xl backdrop-filter-blur"
+        className="flex flex-col justify-around items-center bg-white px-10 py-10 sm:py-5 rounded-xl backdrop-filter-blur sm:w-1/2 sm-pb-5"
         style={{
           backdropFilter: "blur(20px)",
         }}
       >
+        <div className="mb-10 sm:mb-10">
+          <h3>
+            Fellow Gentleman, Love is in the air 💘 , mistletoes glowing
+            everywhere…
+          </h3>
+          <br />
+          <h3>
+            I've heard that there will be a festival. A big one in fact. A lot
+            of beautiful young maidens will be attending this festival. And the
+            best part is those hearts yearning for a little love.
+          </h3>
+          <br />
+          ✨💌 Well, can you squeeze all your feelings, tuck with up a wholesome
+          lot of love, sprinkle some humor and add a dash of cheesiness? Send
+          them a note, with all those little quirks, and they might even fall
+          for you.
+          <h3>
+            <br />
+            <h3>
+              Don't be shy, you will never know what will happen next, Because
+              love is shy, it's sly and finds you where you least expect it.
+            </h3>
+          </h3>
+        </div>
+
         <div className="flex sm:flex-row flex-col items-center sm:mb-5 ">
           <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5 w-42">
             <label htmlFor="name" className="text-gray-600 ml-3">
