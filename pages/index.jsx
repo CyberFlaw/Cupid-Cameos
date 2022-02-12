@@ -74,7 +74,7 @@ export default function Home() {
                   </h3>
                   <h2 className="text-black sm:text-xs text-sm mx-5 mb-5">
                     {" "}
-                    Comming soon!
+                    Coming soon!
                   </h2>
                 </div>
               </div>
