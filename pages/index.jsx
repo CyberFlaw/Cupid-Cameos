@@ -75,7 +75,7 @@ export default function Home() {
           <h3 className="text-white text-xs">Brought to you by</h3>
           <h2 className="text-white text-xm">
             {" "}
-            The Department of Computer Science
+            The Students of Department of Computer Science
           </h2>
         </div>
       </div>
