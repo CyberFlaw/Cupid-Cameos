@@ -31,20 +31,25 @@ export default function Register() {
 
   return (
     <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 h-screen sm:h-screen justify-start items-center">
-      <h1 className="text-6xl sm:text-7xl sm:mt-20 mt-16 text-white mb-10">
+      <h1 className="text-6xl sm:text-7xl sm:mt-16 mt-16 text-white mb-10 ">
         Valient Hearts
       </h1>
 
-      <div className="flex flex-col justify-around items-center">
-        <div className="flex sm:flex-row flex-col items-center sm:mb-5">
-          <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
-            <label htmlFor="name" className="text-white ml-3">
+      <div
+        className="flex flex-col justify-around items-center bg-white px-10 py-10 sm:py-5 rounded-xl backdrop-filter-blur"
+        style={{
+          backdropFilter: "blur(20px)",
+        }}
+      >
+        <div className="flex sm:flex-row flex-col items-center sm:mb-5 ">
+          <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5 w-42">
+            <label htmlFor="name" className="text-gray-600 ml-3">
               Name:
             </label>
             <input
               id="name"
               type="text"
-              className="rounded-md p-0.5 px-3 text-gray-600 "
+              className="rounded-md p-0.5 px-3 text-gray-600 border-pink-500 border-2"
               required
               onChange={(event) => {
                 setName(event.target.value);
@@ -52,14 +57,14 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col sm:mb-0 mb-5">
-            <label htmlFor="email" className="text-white ml-3">
+            <label htmlFor="email" className="text-gray-600 ml-3">
               Email (GECTCR ID):
             </label>
             <input
               id="email"
               type="text"
               required
-              className="rounded-md p-0.5 px-3 text-gray-600"
+              className="rounded-md p-0.5 px-3 text-gray-600 border-pink-500 border-2"
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
@@ -67,16 +72,16 @@ export default function Register() {
           </div>
         </div>
 
-        <div className="flex sm:flex-row flex-col items-center sm:mb-5">
+        <div className="flex sm:flex-row flex-col items-center sm:mb-5 -mb-5">
           <div className="flex flex-col sm:mr-10 sm:mb-0 mb-5">
-            <label htmlFor="phone" className="text-white ml-3">
+            <label htmlFor="phone" className="text-gray-600 ml-3">
               Phone:
             </label>
             <input
               id="phone"
               type="text"
               required
-              className="rounded-md p-0.5 px-3 text-gray-600 sm:w-32"
+              className="rounded-md p-0.5 px-3 text-gray-600 sm:w-32 border-pink-500 border-2"
               onChange={(event) => {
                 setPhone(event.target.value);
               }}
@@ -85,14 +90,14 @@ export default function Register() {
 
           <div className="flex flex-row justify-around ">
             <div className="flex flex-col sm:mb-0 mb-5 sm:mr-10 mr-4">
-              <label htmlFor="branch" className="text-white ml-2">
+              <label htmlFor="branch" className="text-gray-600 ml-2">
                 Branch:
               </label>
               <input
                 id="branch"
                 type="text"
                 required
-                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20  "
+                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20 border-pink-500 border-2 "
                 onChange={(event) => {
                   setBranch(event.target.value);
                 }}
@@ -100,14 +105,14 @@ export default function Register() {
             </div>
 
             <div className="flex flex-col sm:mb-0 mb-5">
-              <label htmlFor="sem" className="text-white ml-1 ">
+              <label htmlFor="sem" className="text-gray-600 ml-1 ">
                 Semester:
               </label>
               <input
                 id="sem"
                 type="text"
                 required
-                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20"
+                className="rounded-md p-0.5 px-3 text-gray-600 sm:w-20 w-20 border-pink-500 border-2"
                 onChange={(event) => {
                   setSem(event.target.value);
                 }}
@@ -116,8 +121,8 @@ export default function Register() {
           </div>
         </div>
 
-        <div className="flex flex-col mb-16 sm:mb-18 sm:mt-0 mt-5">
-          <label className="text-white ml-1">
+        <div className="flex flex-col mb-12 sm:mb-10 sm:mt-0 mt-5">
+          <label className="text-gray-600 ml-1">
             Enter Pickup line (Max 180):
           </label>
           <textarea
@@ -125,7 +130,7 @@ export default function Register() {
             cols="30"
             rows="10"
             maxLength={180}
-            className="p-1 rounded-md h-36 w-64 sm:h-48 sm:w-80 text-gray-600"
+            className="p-1 rounded-md h-36 w-64 sm:h-48 sm:w-80 text-gray-600 border-pink-500 border-2"
             onChange={(event) => {
               setPickupLine(event.target.value);
             }}

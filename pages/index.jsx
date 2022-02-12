@@ -63,7 +63,7 @@ export default function Home() {
                     </h3>
                     <h2 className="text-black sm:text-xs text-sm mx-5 mb-5">
                       {" "}
-                      Choose wisely, Alluring Maiden
+                      Choose wisely, Alluring Maiden!
                     </h2>
                   </div>
                 </div>
