@@ -33,7 +33,6 @@ export default function ReadPickup() {
             localStorage.setItem("betterHalf", props.payload.id);
 
             invalidateUser(partnerDecoded, userDecoded);
-            console.log("Match Updated!");
             Router.push("/waitingroom");
           }}
           className="cursor-pointer flex justify-center items-center text-md sm:text-lg px-8 py-5 bg-gray-50 text-gray-700  uppercase tracking-wide font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs"

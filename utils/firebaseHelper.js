@@ -42,7 +42,7 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
   const key = getKey(tcrid);
 
   if (key === "invalid") {
-    console.log("Play fair buddy");
+    console.error("Play fair buddy");
   } else {
     const refdb = ref(db);
     get(child(refdb, `registered/`))
@@ -50,7 +50,7 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
         if (snapshot.val() !== null) {
           if (Object.keys(snapshot.val()).find((element) => element === key)) {
             // Remove Comment
-            console.log("User Already Exits!");
+            console.error("User Already Exits!");
             return 0;
           } else {
             push(child(ref(db), "registered")).key;
@@ -61,7 +61,6 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
               updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
 
             updates["registered/" + key] = "active";
-            console.log("Inserted Data!");
             return update(ref(db), updates);
           }
         } else {
@@ -73,7 +72,6 @@ export function writeNewUser(tcrid, uuid, sex, pickupLine = "") {
             updates[sex + "/" + key + "/" + "pickup"] = pickupLine;
 
           updates["registered/" + key] = "active";
-          console.log("Inserted Data!");
           return update(ref(db), updates);
         }
       })
@@ -94,9 +92,8 @@ export async function readPickupLines() {
         Object.values(snapshot.val()).forEach((element) => {
           lines.push(element);
         });
-        // console.log(lines);
       } else {
-        console.log("No data available");
+        console.error("No data available");
         return [];
       }
     })
@@ -120,7 +117,7 @@ export function invalidateUser(partnerUUID, userUUID) {
   userName = uName.split(" ")[0];
 
   if (ukey === "invalid" || pkey === "invalid") {
-    console.log("Play fair buddy");
+    console.error("Play fair buddy");
   } else {
     const updates = {};
     updates["registered/" + ukey] = "inactive";
@@ -135,7 +132,6 @@ export function invalidateUser(partnerUUID, userUUID) {
       set(ref(db, `/matches/${partnerName}${userName}`), payload);
     });
 
-    console.log(pkey);
     remove(ref(db, `male/${pkey}`));
   }
 }

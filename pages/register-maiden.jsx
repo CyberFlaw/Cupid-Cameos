@@ -16,7 +16,16 @@ export default function Register() {
   const payload = {};
 
   useEffect(() => {
-    if (localStorage.getItem("romanticId")) router.push("/read-pickups");
+    if (
+      localStorage.getItem("romanticId") &&
+      localStorage.getItem("betterHalf")
+    )
+      router.push("/waitingroom");
+    if (
+      localStorage.getItem("romanticId") &&
+      !localStorage.getItem("betterHalf")
+    )
+      router.push("/read-pickups");
   });
 
   return (

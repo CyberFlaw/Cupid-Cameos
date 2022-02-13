@@ -1,14 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+
 import readImage from "../assets/read.png";
 import writeImage from "../assets/write.png";
 
 export default function Home() {
-  useEffect(() => {
-    localStorage.removeItem("romanticId");
-    localStorage.removeItem("betterHalf");
-  });
   return (
     <>
       <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen sm:h-screen justify-start items-center">

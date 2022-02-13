@@ -176,7 +176,7 @@ export default function Register() {
               payload.uuid = encodeUUID(payload);
 
               const check = getKey(email);
-              if (check === "invalid") console.log("Wrong email");
+              if (check === "invalid") console.error("Wrong email");
               else {
                 writeNewUser(
                   payload.email,
