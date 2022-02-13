@@ -1,22 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
-import { useEffect } from "react";
 
 import readImage from "../assets/read.png";
 import writeImage from "../assets/write.png";
 
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const id = localStorage.getItem("romanticId");
-
-    if (id) {
-      router.push("/waitingroom");
-    }
-  });
   return (
     <>
       <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen sm:h-screen justify-start items-center">
@@ -45,7 +33,7 @@ export default function Home() {
                     </h3>
                     <h2 className="text-black sm:text-xs text-sm mx-5 mb-5">
                       {" "}
-                      Best of luck, Valiant Hearts!
+                      Best of Luck, Valiant Hearts!
                     </h2>
                   </div>
                 </div>
@@ -54,40 +42,35 @@ export default function Home() {
           </div>
           {/* Read pickup */}
           <div id="read-pickup" className="sm:mb-0 mb-10 ">
-            {/* <Link href="/read-pickup" passHref> */}
-            <button className=" px-8 py-2 mt-8 rounded-3xl text-gray-100 font-semibold uppercase tracking-wide">
-              <div className="bg-black hover:opacity-60 opacity-0 h-full">
-                {" "}
-              </div>
-              <div className="bg-slate-400 font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs">
-                <div className="-m-10">
-                  <Image
-                    src={readImage}
-                    alt="read img"
-                    height={200}
-                    width={200}
-                  />
-                  <h3 className="text-black sm:text-xs text-sm mx-5 mb-5">
-                    Gals! I’ve heard that there are a bunch of Gentlemen on the
-                    other side of this door with their finest jokes. If you are
-                    flattered do let them know. Remember you only get one pick.
-                  </h3>
-                  <h2 className="text-black sm:text-xs text-sm mx-5 mb-5">
-                    {" "}
-                    Coming soon!
-                  </h2>
+            <Link href="/register-maiden" passHref>
+              <button className=" px-8 py-2 mt-8 rounded-3xl text-gray-100 font-semibold uppercase tracking-wide">
+                <div className="bg-white font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs">
+                  <div className="-m-10">
+                    <Image
+                      src={readImage}
+                      alt="read img"
+                      height={200}
+                      width={200}
+                    />
+                    <h3 className="text-black sm:text-xs text-sm mx-5 mb-5">
+                      Gals! I’ve heard that there are a bunch of Gentlemen on
+                      the other side of this door with their finest jokes. If
+                      you are flattered do let them know. Remember you only get
+                      one pick.
+                    </h3>
+                    <h2 className="text-black sm:text-xs text-sm mx-5 mb-5">
+                      {" "}
+                      Choose wisely, Alluring Maidens!
+                    </h2>
+                  </div>
                 </div>
-              </div>
-            </button>
-            {/* </Link> */}
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-grow flex-col justify-center items-center ">
           <h3 className="text-white text-xs">Brought to you by</h3>
-          <h2 className="text-white text-xm">
-            {" "}
-            The Students of Computer Science Department
-          </h2>
+          <h2 className="text-white text-xm"> Hopeless Romantic Tech Nerds</h2>
         </div>
       </div>
     </>
