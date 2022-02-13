@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 
-import { readPickupLines, invalidateUser } from "../utils/FirebaseHelper";
+import { readPickupLines, invalidateUser } from "../utils/firebaseHelper";
 import { decodeUUID } from "../utils/uuidProcessing";
 
 export default function ReadPickup() {
