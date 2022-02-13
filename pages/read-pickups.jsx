@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { readPickupLines, invalidateUser } from "../utils/FirebaseHelper";
 import { decodeUUID } from "../utils/uuidProcessing";
 
-export default function readPickup() {
+export default function ReadPickup() {
   const [pickupBuffer, setPickupBuffer] = useState([]);
 
   const Router = useRouter();
@@ -19,7 +19,7 @@ export default function readPickup() {
     if (localStorage.getItem("betterHalf")) Router.push("/waitingroom");
 
     readBuffer();
-  }, []);
+  }, [Router]);
 
   function JsxInjection(props) {
     let line = props.payload.pickup;

@@ -12,28 +12,28 @@ import {
 
 import { getKey } from "./uuidProcessing";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDfL8P3LU0FPGiebLShfhf4MgiwDBecsTE",
-//   authDomain: "valentine-5e50f.firebaseapp.com",
-//   databaseURL:
-//     "https://valentine-5e50f-default-rtdb.asia-southeast1.firebasedatabase.app",
-//   projectId: "valentine-5e50f",
-//   storageBucket: "valentine-5e50f.appspot.com",
-//   messagingSenderId: "929546683526",
-//   appId: "1:929546683526:web:ed6327b46e90b71a177d07",
-//   measurementId: "G-VFH503YKKJ",
-// };
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAVmJBYD6ij9LMh-iEofu9SjO0FYxbuSTQ",
-  authDomain: "valentine-dev.firebaseapp.com",
-  projectId: "valentine-dev",
+  apiKey: "AIzaSyDfL8P3LU0FPGiebLShfhf4MgiwDBecsTE",
+  authDomain: "valentine-5e50f.firebaseapp.com",
   databaseURL:
-    "https://valentine-dev-default-rtdb.asia-southeast1.firebasedatabase.app/",
-  storageBucket: "valentine-dev.appspot.com",
-  messagingSenderId: "520613889719",
-  appId: "1:520613889719:web:c54787721c19353b71ef32",
+    "https://valentine-5e50f-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "valentine-5e50f",
+  storageBucket: "valentine-5e50f.appspot.com",
+  messagingSenderId: "929546683526",
+  appId: "1:929546683526:web:ed6327b46e90b71a177d07",
+  measurementId: "G-VFH503YKKJ",
 };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAVmJBYD6ij9LMh-iEofu9SjO0FYxbuSTQ",
+//   authDomain: "valentine-dev.firebaseapp.com",
+//   projectId: "valentine-dev",
+//   databaseURL:
+//     "https://valentine-dev-default-rtdb.asia-southeast1.firebasedatabase.app/",
+//   storageBucket: "valentine-dev.appspot.com",
+//   messagingSenderId: "520613889719",
+//   appId: "1:520613889719:web:c54787721c19353b71ef32",
+// };
 
 initializeApp(firebaseConfig);
 const db = getDatabase();

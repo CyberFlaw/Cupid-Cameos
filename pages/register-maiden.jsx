@@ -17,7 +17,7 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem("romanticId")) router.push("/read-pickups");
-  }, []);
+  });
 
   return (
     <div className="flex flex-col bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen h-auto sm:min-h-screen justify-start items-center">
